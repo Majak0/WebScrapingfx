@@ -1,0 +1,12 @@
+
+n
+java:S2293l"YReplace the type specification in this constructor call with the diamond operator ("<>").(åñÿ-
+[
+java:S2095c"EUse try-with-resources or close this "Scanner" in a "finally" clause.(ëð³†
+S	java:S106r"9Replace this use of System.out or System.err by a logger.(±Èæðùÿÿÿÿ
+Z
+java:S1128"=Remove this unused import 'javafx.collections.FXCollections'.(´¶²Æ8Û‰ÃÅ‹0
+`
+java:S1128">Remove this unused import 'javafx.collections.ObservableList'.(ÄÜ€éüÿÿÿÿ8Ü‰ÃÅ‹0
+K
+java:S1128".Remove this unused import 'javafx.scene.Node'.(ÑÖ¬ï8Ý‰ÃÅ‹0

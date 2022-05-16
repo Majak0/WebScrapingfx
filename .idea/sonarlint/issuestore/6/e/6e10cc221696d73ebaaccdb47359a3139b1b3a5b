@@ -1,0 +1,13 @@
+
+q
+java:S1104"[Make paneOptionsMenu a static final constant or non-public and provide accessors if needed.(Έϊ•
+l
+java:S1104"VMake buttonMenu a static final constant or non-public and provide accessors if needed.(€‚πο
+K
+java:S1444"5Make this "public static paneOptionsMenu" field final(Έϊ•
+F
+java:S1444"0Make this "public static buttonMenu" field final(€‚πο
+B
+java:S3010",Remove this assignment of "paneOptionsMenu".(α·‹£
+B
+java:S3010"'Remove this assignment of "buttonMenu".(θ±Η¬ωÿÿÿÿ

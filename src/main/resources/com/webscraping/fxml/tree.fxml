@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.webscraping.controller.TreeViewController">
+   <children>
+      <TreeView layoutX="15.0" layoutY="25.0" minHeight="-Infinity" prefHeight="615.0" prefWidth="300.0" />
+      <SplitPane dividerPositions="0.65" layoutX="324.0" layoutY="25.0" prefHeight="615.0" prefWidth="644.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="569.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="613.0" prefWidth="68.0">
+               <children>
+                  <Button layoutX="141.0" layoutY="14.0" mnemonicParsing="false" text="Products" />
+                  <Label layoutX="14.0" layoutY="14.0" text="xx products">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+      <Button layoutX="80.0" layoutY="657.0" mnemonicParsing="false" onAction="#returnMenu" prefHeight="25.0" prefWidth="85.0" text="Back" />
+      <Button layoutX="819.0" layoutY="657.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Export" />
+      <Label layoutX="23.0" layoutY="35.0" text="TReeView">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
