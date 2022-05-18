@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.webscraping.controller.ParametersController">
+   <children>
+      <Label layoutX="431.0" layoutY="26.0" text="Paramètres">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Button layoutX="934.0" layoutY="661.0" mnemonicParsing="false" onAction="#retourMenu" text="Button" />
+   </children>
+</AnchorPane>

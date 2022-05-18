@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.webscraping.controller.RapprochementController">
+   <children>
+      <Label layoutX="325.0" layoutY="25.0" text="Rapprochement ArtData">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Button layoutX="935.0" layoutY="660.0" mnemonicParsing="false" onAction="#retourMenu" text="Retour" />
+   </children>
+</AnchorPane>

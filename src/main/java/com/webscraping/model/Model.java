@@ -1,7 +1,7 @@
 package com.webscraping.model;
 
 import java.sql.*;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Model {
@@ -15,7 +15,7 @@ public class Model {
     public final int height;
 
     // LIST
-    public static List<String> vendors = findAllVendors();
+    public static HashMap<String, String> vendors = findAllVendors();
 
     // STATE
     public int state;
@@ -23,6 +23,7 @@ public class Model {
     // VENDOR
     public int vendor;
     public int maxCategory;
+    public String currentVendor;
 
     public Model() {
         state = STATE_INITIAL;
@@ -30,6 +31,7 @@ public class Model {
         height = 700;
         vendor = 1;
         maxCategory = 0;
+        currentVendor = "";
     }
 
     /**
@@ -43,17 +45,18 @@ public class Model {
      * Find all vendors registered in /vendors
      * @return : the list of the vendors registered
      */
-    public static List<String> findAllVendors() {
+    public static HashMap<String, String> findAllVendors() {
         // Postresql -> afficher tout fournisseurs
-        List<String> vendorsFinder = new ArrayList<>();
+        HashMap<String, String> vendorsFinder = new HashMap<>();
         try {
             String url = "jdbc:postgresql://postgresql-ppr-001.groupe-mb.net:5432/scrapingproduct";
             Connection conn = DriverManager.getConnection(url,"usr_jacquot","IkZVeP3lEN8Sxo4SoWji");
             Statement state = conn.createStatement();
-            String sql = "SELECT * FROM scrapdb6.fournisseur ";
+            String sql = "SELECT url,artfrs_r1 FROM scrapdb6.siteweb\n" +
+                    "RIGHT JOIN scrapdb6.fournisseur ON scrapdb6.fournisseur.id_fournisseur = scrapdb6.siteweb.id_fournisseur";
             ResultSet results = state.executeQuery(sql);
             while (results.next()){
-                vendorsFinder.add(results.getString("artfrs_r1"));
+                vendorsFinder.put(results.getString("artfrs_r1"), results.getString("url"));
             }
             conn.close();
         } catch (SQLException e) {

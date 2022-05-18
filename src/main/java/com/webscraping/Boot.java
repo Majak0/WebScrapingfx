@@ -10,14 +10,17 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.IOException;
+
 public class Boot extends Application {
     public static View view;
     public static Model model;
     public static Controller controller;
     public static Stage primaryStage;
+    public static Scene scene_artdata;
+    public static Scene scene_parameters;
     public static Scene scene_vendorsLister;
     public static Scene scene_treeView;
-    public static Scene scene_vendors;
     public static Scene scene_menu;
 
     public static void main(String[] args) {
@@ -33,25 +36,36 @@ public class Boot extends Application {
         view = new View(model);
         controller = new Controller(model, view);
 
-        // FXML
-        FXMLLoader fxmlLoaderMenu = new FXMLLoader(getClass().getResource("fxml/menu.fxml"));
-        Parent root_menu = fxmlLoaderMenu.load();
-
-        FXMLLoader fxmlLoaderTree = new FXMLLoader(getClass().getResource("fxml/tree.fxml"));
-        Parent root_tree = fxmlLoaderTree.load();
-
-        FXMLLoader fxmlLoaderVendors = new FXMLLoader(getClass().getResource("fxml/vendorLister.fxml"));
-        Parent root_vendor = fxmlLoaderVendors.load();
-
-        // SCENES PRINCIPALES
-        scene_menu = new Scene(root_menu, model.width, model.height);
-        scene_vendors = new Scene(view.scrollPane, model.width, model.height);
-        scene_treeView = new Scene(root_tree, model.width,model.height);
-        scene_vendorsLister = new Scene(root_vendor,model.width, model.height);
+        // Load all the FXML
+        loadFXML();
 
         stage.setTitle("~ Data Web Scrapping ~");
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene_menu);
         stage.show();
+    }
+
+    private void loadFXML() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menu.fxml"));
+        Parent root_menu = fxmlLoader.load();
+
+        fxmlLoader = new FXMLLoader(getClass().getResource("fxml/tree.fxml"));
+        Parent root_tree = fxmlLoader.load();
+
+        fxmlLoader = new FXMLLoader(getClass().getResource("fxml/vendorLister.fxml"));
+        Parent root_vendor = fxmlLoader.load();
+
+        fxmlLoader = new FXMLLoader(getClass().getResource("fxml/rapprochement.fxml"));
+        Parent root_rapprochement = fxmlLoader.load();
+
+        fxmlLoader = new FXMLLoader(getClass().getResource("fxml/parametres.fxml"));
+        Parent root_parameters = fxmlLoader.load();
+
+        // SCENES PRINCIPALES
+        scene_menu = new Scene(root_menu, model.width, model.height);
+        scene_treeView = new Scene(root_tree, model.width,model.height);
+        scene_vendorsLister = new Scene(root_vendor,model.width, model.height);
+        scene_parameters = new Scene(root_parameters,model.width, model.height);
+        scene_artdata = new Scene(root_rapprochement,model.width, model.height);
     }
 }

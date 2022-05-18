@@ -8,8 +8,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
 
-import java.io.IOException;
-
 import static com.webscraping.Boot.primaryStage;
 import static com.webscraping.Boot.scene_menu;
 
